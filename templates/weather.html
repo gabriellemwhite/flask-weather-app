@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Flask Weather App</title>
+</head>
+
+<body>
+    <div class="weather">
+        <div class="data-container">
+            <center>
+                <img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png" width="150px">
+            </center>
+            <h5> Weather in {{weather.name}}, {{weather.sys.country}}</h5>
+            <p> Description: {{ weather.weather[0].description.title() }}</p>
+            <p> Current Temperature: {{weather.main.temp}}&#176</p>
+            <p> Feels Like: {{weather.main.feels_like}}&#176</p>
+            <p> Wind: {{weather.wind.speed}}mph</p>
+            <p> Humidity: {{weather.main.humidity}}&#37;</p>
+            <p> Pressure: {{weather.main.pressure}}mB</p>
+            <p> Latitude: {{ weather.coord.lat }}&#176;</p>
+            <p> Longtitude: {{ weather.coord.lon }}&#176;</p>
+            <button type="submit" class="btn btn-primary btn-block" onclick="history.back()">Back</button>
+        </div>
+        <footer class="bottomfooter">
+            <span class="text-muted">Gabrielle White 2022 - <a href="https://medium.com/@gabriellemwhite">Blog</a> - <a href="https://github.com/gabriellemwhite/flask-weather-app">Code</a></span>
+        </footer>
+    </div>
+
+</body>
+</html>
